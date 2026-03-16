@@ -8,7 +8,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN chmod +x run.prod.sh
+RUN useradd -m appuser && chown -R appuser:appuser /usr/src/app
+USER appuser
 
 RUN sh setup.sh
 
