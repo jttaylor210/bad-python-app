@@ -8,6 +8,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+RUN chmod +x run.prod.sh
+
 RUN sh setup.sh
 
 ENV FLASK_APP app
